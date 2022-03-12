@@ -7,7 +7,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.apiapolice.domain.model.Apolice;
-import br.edu.infnet.apiapolice.domain.model.Usuario;
 import br.edu.infnet.apiapolice.domain.repository.ApoliceRepository;
 
 
@@ -18,17 +17,15 @@ public class ApoliceService {
 	private ApoliceRepository apoliceRepository;
 
 	public List<Apolice> obterLista() {
-
-		return apoliceRepository.findAll(Sort.by(Sort.Direction.ASC, "transportador"));
+		return apoliceRepository.findAll(Sort.by(Sort.Direction.ASC, "data"));
 	}
 
-	public List<Apolice> obterLista(Usuario usuario) {
-		 return apoliceRepository.findAll(usuario.getId(),Sort.by(Sort.Direction.DESC, "data"));
+	public List<Apolice> obterLista(Integer userId) {
+		 return apoliceRepository.findAll(userId,Sort.by(Sort.Direction.DESC, "data"));
 	}
 
 	public void incluir(Apolice Apolice) {
 		apoliceRepository.save(Apolice);
-
 	}
 
 	public void excluir(Integer id) {
@@ -36,7 +33,6 @@ public class ApoliceService {
 	}
 
 	public Apolice obterPorId(Integer id) {
-		
 		return apoliceRepository.findById(id).orElse(null);
 	}
 

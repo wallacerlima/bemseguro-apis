@@ -13,8 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 @Entity
 @Table(name = "TUsuario")
 public class Usuario {
@@ -39,17 +37,14 @@ public class Usuario {
 	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
-	@JsonBackReference(value="usuario-client")
 	private List<Segurado> segurados;
 	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
-	@JsonBackReference(value="user-veiculos")
 	private List<Veiculo> veiculos;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
-	@JsonBackReference(value="user-apolice")
 	private List<Apolice> apolices;
 	
 	public Usuario() {

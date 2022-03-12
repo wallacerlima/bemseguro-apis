@@ -20,15 +20,20 @@ public class SeguradoController {
 	
 	@Autowired
 	private SeguradoService seguradoService;
-
+	
 	@GetMapping(value = "/listar")
 	public List<Segurado> obterLista() {
 		return seguradoService.obterLista();
 	}
 	
-	@GetMapping(value = "/{idUsuario}/listarPorUser")
+	@GetMapping(value = "/usuario/{idUsuario}")
 	public List<Segurado> obterLista(@PathVariable Integer idUsuario) {
 		return seguradoService.obterLista(idUsuario);
+	}
+	
+	@GetMapping(value = "/{id}")
+	public Segurado obterPorId(@PathVariable Integer id) {
+		return seguradoService.obterPorId(id);
 	}
 	
 	@PostMapping(value = "/incluir")
@@ -36,7 +41,6 @@ public class SeguradoController {
 		seguradoService.incluir(segurado);
 	}
 	
-
 	@DeleteMapping(value = "/{id}/excluir")
 	public void excluir(@PathVariable Integer id) {
 		seguradoService.excluir(id);	

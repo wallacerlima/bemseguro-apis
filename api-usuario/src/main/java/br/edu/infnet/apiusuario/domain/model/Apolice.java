@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "TApolice")
 public class Apolice {
@@ -34,6 +36,7 @@ public class Apolice {
 	private List<Veiculo> itensSegurados;
 	
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
 	

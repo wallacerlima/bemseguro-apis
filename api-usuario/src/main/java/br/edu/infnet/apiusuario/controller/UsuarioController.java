@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.infnet.apiusuario.domain.model.Usuario;
@@ -24,19 +25,26 @@ public class UsuarioController {
 	
 	@GetMapping(value = "/listar")
 	public List<Usuario> obterLista() {
-		
 		return usuarioService.obterLista();
+	}
+	
+	@GetMapping(value = "/{id}")
+	public Usuario obterPorId(@PathVariable Integer id) {
+		return usuarioService.obterPorId(id);
 	}
 
 	@PostMapping(value = "/incluir")
 	public void incluir(@RequestBody Usuario usuario) {
-		
 		usuarioService.incluir(usuario);
 	}
 
 	@DeleteMapping(value = "/{id}/excluir")
 	public void excluir(@PathVariable Integer id) {
-		
 		usuarioService.excluir(id);	
+	}
+	
+	@PostMapping(value = "/validar")
+	public Usuario validar(@RequestParam String email, @RequestParam String senha) {
+		return usuarioService.validar(email, senha);
 	}
 }

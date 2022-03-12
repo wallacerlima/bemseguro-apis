@@ -19,6 +19,10 @@ public class VeiculoService {
 	public List<Veiculo> obterLista() {
 		 return veiculoRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
 	}
+	
+	public List<Veiculo> obterLista(Integer userId) {
+		 return veiculoRepository.findAll(userId);
+	}
 
 	public void excluir(Integer id) {
 		veiculoRepository.deleteById(id);

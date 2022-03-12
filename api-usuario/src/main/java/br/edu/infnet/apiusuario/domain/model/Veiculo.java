@@ -45,6 +45,7 @@ public abstract class Veiculo {
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
+	@JsonIgnore
 	private Usuario usuario;
 	
 	public Veiculo() {

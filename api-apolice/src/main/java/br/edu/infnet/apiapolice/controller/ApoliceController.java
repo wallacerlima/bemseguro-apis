@@ -27,6 +27,11 @@ public class ApoliceController {
 		return apoliceService.obterLista();
 	}
 	
+	@GetMapping(value = "/usuario/{idUsuario}/listar")
+	public List<Apolice> obterLista(@PathVariable Integer idUsuario) {
+		return apoliceService.obterLista(idUsuario);
+	}
+	
 	@DeleteMapping(value = "/{id}/excluir")
 	public void excluir (@PathVariable Integer id) {
 		apoliceService.excluir(id);

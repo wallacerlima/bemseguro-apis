@@ -7,7 +7,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.apiveiculo.domain.model.Caminhao;
-import br.edu.infnet.apiveiculo.domain.model.Usuario;
 import br.edu.infnet.apiveiculo.domain.repository.CaminhaoRepository;
 
 
@@ -21,8 +20,8 @@ public class CaminhaoService {
 		return caminhaoRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
 	}
 
-	public List<Caminhao> obterLista(Usuario usuario) {
-		return caminhaoRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "id"));
+	public List<Caminhao> obterListaPorUsuario(Integer userId) {
+		return caminhaoRepository.findAll(userId, Sort.by(Sort.Direction.ASC, "id"));
 	}
 
 	public void incluir(Caminhao caminhao) {

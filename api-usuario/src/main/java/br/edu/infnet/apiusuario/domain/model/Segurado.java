@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "TSegurado")
 public class Segurado {
@@ -24,6 +26,7 @@ public class Segurado {
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
+	@JsonIgnore
 	private Usuario usuario;
 	
 	@OneToOne(cascade = CascadeType.PERSIST)
