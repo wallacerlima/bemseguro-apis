@@ -1,0 +1,567 @@
+{
+	"info": {
+		"_postman_id": "626483eb-447a-40fd-857a-da9f304f77d9",
+		"name": "bem-seguro-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-usuario",
+			"item": [
+				{
+					"name": "Listar usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"usuario",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar usuário por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Novo usuário Teste\",\n    \"email\": \"usuarioteste@gmail.com\",\n    \"senha\": \"123456\",\n    \"admin\": false,\n    \"endereco\": {\n        \"cep\": \"25035-090\",\n        \"logradouro\": \"Rua de teste\",\n        \"complemento\": \"Complemento teste\",\n        \"bairro\": \"Bairro de teste\",\n        \"localidade\": \"Localidade de teste\",\n        \"uf\": \"RJ\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/usuario/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"usuario",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/usuario/2/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"usuario",
+								"2",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autenticar usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/usuario/validar?email=wallacereislima@gmail.com&senha=123456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"usuario",
+								"validar"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "wallacereislima@gmail.com"
+								},
+								{
+									"key": "senha",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-segurado",
+			"item": [
+				{
+					"name": "Listar segurados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/segurado/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"segurado",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar segurado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Wallace Lima\",\n    \"cpfCnpj\": \"01525478859\",\n    \"email\": \"wallacereislima@gmail.com\",\n    \"endereco\": {\n        \"cep\": \"25035090\",\n        \"logradouro\": \"Logradouro teste\",\n        \"complemento\": \"complemento\",\n        \"bairro\": \"Bairro teste\",\n        \"localidade\": \"localidade teste\",\n        \"uf\": \"uf teste\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/segurado/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"segurado",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar segurados por usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/segurado/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"segurado",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar segurado por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/segurado/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"segurado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir segurado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/segurado/2/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"segurado",
+								"2",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-apolice",
+			"item": [
+				{
+					"name": "Listar apólices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/apolice/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"apolice",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar apólice por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/apolice/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"apolice",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar apólice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numApolice\": \"99999999999999\",\n    \"tipo\": \"Tradicional\",\n    \"data\": \"2022-03-12T13:10:01.231133\",\n    \"segurado\": {\n        \"id\": 1,\n        \"nome\": \"Jorge Santos\",\n        \"cpfCnpj\": \"12345678912\",\n        \"email\": \"jorge.santos@gmail.com\",\n        \"usuario\": {\n            \"id\": 1,\n            \"nome\": \"Wallace lima\",\n            \"email\": \"wallacereislima@gmail.com\",\n            \"senha\": \"123456\",\n            \"admin\": true,\n            \"endereco\": {\n                \"id\": 1,\n                \"cep\": \"25035-090\",\n                \"logradouro\": \"Rua de teste\",\n                \"complemento\": \"Complemento teste\",\n                \"bairro\": \"Bairro de teste\",\n                \"localidade\": \"Localidade de teste\",\n                \"uf\": \"RJ\"\n            }\n        },\n        \"endereco\": null\n    },\n    \"itensSegurados\": [\n        {\n            \"tipo\": \"Carro\",\n            \"id\": 1,\n            \"placa\": \"QWE4822\",\n            \"uf\": \"RJ\",\n            \"chassi\": \"DASRFDSF544545D\",\n            \"cor\": \"Vermelho\",\n            \"usuario\": {\n                \"id\": 1,\n                \"nome\": \"Wallace lima\",\n                \"email\": \"wallacereislima@gmail.com\",\n                \"senha\": \"123456\",\n                \"admin\": true,\n                \"endereco\": {\n                    \"id\": 1,\n                    \"cep\": \"25035-090\",\n                    \"logradouro\": \"Rua de teste\",\n                    \"complemento\": \"Complemento teste\",\n                    \"bairro\": \"Bairro de teste\",\n                    \"localidade\": \"Localidade de teste\",\n                    \"uf\": \"RJ\"\n                }\n            },\n            \"possuiKitGas\": true\n        },\n        {\n            \"tipo\": \"Motocicleta\",\n            \"id\": 2,\n            \"placa\": \"TRE1236\",\n            \"uf\": \"SP\",\n            \"chassi\": \"QWEWEQEWQEWQ33\",\n            \"cor\": \"Azul\",\n            \"usuario\": {\n                \"id\": 1,\n                \"nome\": \"Wallace lima\",\n                \"email\": \"wallacereislima@gmail.com\",\n                \"senha\": \"123456\",\n                \"admin\": true,\n                \"endereco\": {\n                    \"id\": 1,\n                    \"cep\": \"25035-090\",\n                    \"logradouro\": \"Rua de teste\",\n                    \"complemento\": \"Complemento teste\",\n                    \"bairro\": \"Bairro de teste\",\n                    \"localidade\": \"Localidade de teste\",\n                    \"uf\": \"RJ\"\n                }\n            },\n            \"dispositivoAntiFurto\": false\n        },\n        {\n            \"tipo\": \"Caminhao\",\n            \"id\": 3,\n            \"placa\": \"ZXC1236\",\n            \"uf\": \"SC\",\n            \"chassi\": \"MNNC455DOOENNF\",\n            \"cor\": \"Branco\",\n            \"usuario\": {\n                \"id\": 1,\n                \"nome\": \"Wallace lima\",\n                \"email\": \"wallacereislima@gmail.com\",\n                \"senha\": \"123456\",\n                \"admin\": true,\n                \"endereco\": {\n                    \"id\": 1,\n                    \"cep\": \"25035-090\",\n                    \"logradouro\": \"Rua de teste\",\n                    \"complemento\": \"Complemento teste\",\n                    \"bairro\": \"Bairro de teste\",\n                    \"localidade\": \"Localidade de teste\",\n                    \"uf\": \"RJ\"\n                }\n            },\n            \"eixos\": 4\n        }\n    ],\n    \"usuario\": {\n        \"id\": 1,\n        \"nome\": \"Wallace lima\",\n        \"email\": \"wallacereislima@gmail.com\",\n        \"senha\": \"123456\",\n        \"admin\": true,\n        \"endereco\": {\n            \"id\": 1,\n            \"cep\": \"25035-090\",\n            \"logradouro\": \"Rua de teste\",\n            \"complemento\": \"Complemento teste\",\n            \"bairro\": \"Bairro de teste\",\n            \"localidade\": \"Localidade de teste\",\n            \"uf\": \"RJ\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/apolice/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"apolice",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir apólice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/apolice/3/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"apolice",
+								"3",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar apólices por usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/apolice/usuario/1/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"apolice",
+								"usuario",
+								"1",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-veiculo",
+			"item": [
+				{
+					"name": "Excluir veículo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/veiculo/5/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"veiculo",
+								"5",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todos os veículos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/veiculo/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"veiculo",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar veículo por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/veiculo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"veiculo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar veículos por usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/veiculo/usuario/1/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"veiculo",
+								"usuario",
+								"1",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar carro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"tipo\": \"Carro\",\n        \"placa\": \"QWE4822\",\n        \"uf\": \"RJ\",\n        \"chassi\": \"DASRFDSF544545D\",\n        \"cor\": \"Vermelho\",\n        \"usuario\": {\n            \"id\": 1,\n            \"nome\": \"Wallace lima\",\n            \"email\": \"wallacereislima@gmail.com\",\n            \"senha\": \"123456\",\n            \"admin\": true,\n            \"endereco\": {\n                \"id\": 1,\n                \"cep\": \"25035-090\",\n                \"logradouro\": \"Rua de teste\",\n                \"complemento\": \"Complemento teste\",\n                \"bairro\": \"Bairro de teste\",\n                \"localidade\": \"Localidade de teste\",\n                \"uf\": \"RJ\"\n            }\n        },\n        \"possuiKitGas\": true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/veiculo/carro/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"veiculo",
+								"carro",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar motocicleta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"tipo\": \"Motocicleta\",\n        \"placa\": \"TRE1236\",\n        \"uf\": \"SP\",\n        \"chassi\": \"QWEWEQEWQEWQ33\",\n        \"cor\": \"Azul\",\n        \"usuario\": {\n            \"id\": 1,\n            \"nome\": \"Wallace lima\",\n            \"email\": \"wallacereislima@gmail.com\",\n            \"senha\": \"123456\",\n            \"admin\": true,\n            \"endereco\": {\n                \"id\": 1,\n                \"cep\": \"25035-090\",\n                \"logradouro\": \"Rua de teste\",\n                \"complemento\": \"Complemento teste\",\n                \"bairro\": \"Bairro de teste\",\n                \"localidade\": \"Localidade de teste\",\n                \"uf\": \"RJ\"\n            }\n        },\n        \"dispositivoAntiFurto\": false\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/veiculo/motocicleta/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"veiculo",
+								"motocicleta",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar caminhão",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"tipo\": \"Caminhao\",\n        \"placa\": \"ZXC1236\",\n        \"uf\": \"SC\",\n        \"chassi\": \"MNNC455DOOENNF\",\n        \"cor\": \"Branco\",\n        \"usuario\": {\n            \"id\": 1,\n            \"nome\": \"Wallace lima\",\n            \"email\": \"wallacereislima@gmail.com\",\n            \"senha\": \"123456\",\n            \"admin\": true,\n            \"endereco\": {\n                \"id\": 1,\n                \"cep\": \"25035-090\",\n                \"logradouro\": \"Rua de teste\",\n                \"complemento\": \"Complemento teste\",\n                \"bairro\": \"Bairro de teste\",\n                \"localidade\": \"Localidade de teste\",\n                \"uf\": \"RJ\"\n            }\n        },\n        \"eixos\": 4\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/veiculo/caminhao/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"veiculo",
+								"caminhao",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

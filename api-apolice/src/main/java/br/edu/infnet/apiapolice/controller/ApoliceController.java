@@ -27,6 +27,11 @@ public class ApoliceController {
 		return apoliceService.obterLista();
 	}
 	
+	@GetMapping(value = "/{id}")
+	public Apolice obterPorId(@PathVariable Integer id) {
+		return apoliceService.obterPorId(id);
+	}
+	
 	@GetMapping(value = "/usuario/{idUsuario}/listar")
 	public List<Apolice> obterLista(@PathVariable Integer idUsuario) {
 		return apoliceService.obterLista(idUsuario);

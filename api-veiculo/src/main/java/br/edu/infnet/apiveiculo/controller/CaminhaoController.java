@@ -21,7 +21,7 @@ public class CaminhaoController {
 	private CaminhaoService caminhaoService;
 	
 	@PostMapping(value = "/caminhao/incluir")
-	public void incluir(@RequestBody Caminhao caminhao ) {
+	public void incluir(@RequestBody Caminhao caminhao) {
 		caminhaoService.incluir(caminhao);
 	}
 
